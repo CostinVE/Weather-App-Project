@@ -9,24 +9,29 @@
      <title>Document</title>
      <style>.prev, .next {
     cursor: pointer;
-    position: absolute;
-    top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
+    margin-top: -36px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 28px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    text-decoration: none;
   }
+.img{
+    height: 30px;
+}
 
 
 .next {
-    right: 0;
+    float: right;
     border-radius: 3px 0 0 3px;
   }
+.prev{
+    float: left;
+}
   
 
 .dot {
@@ -55,7 +60,7 @@
   }</style>
 </head>
 <body>
-    <div class="container-fluid rounded-3" style="width: 480px; height: 920px; overflow: auto; background-color: hsl(241, 87%, 63%);">
+    <div class="container-fluid rounded-3" style="width: 500px; height: 920px; overflow: auto; background-color: hsl(241, 87%, 63%);">
         <br>
     <i class="fa-solid fa-bars" style="font-size: xx-large; color: #ffffff;"></i>
     <div class="container d-flex flex-column  text-light text-center my-5"> <h2>10 °C</h2>
@@ -108,29 +113,88 @@
         </div>
         <!-- Slide fade -->
         <div class="mySlides">
-            <div class="d-flex flex-column text-center text-light"><p class="fw-bold my-2">Sunny Coming</p><p class="opacity-75 m-0">Rain possible this morning</p></div>
+            <div class="d-flex flex-column text-center text-light"><p class="fw-bold my-2">It may be slippery!</p><p class="opacity-75 m-0">Snow likely to continue until 7PM</p></div>
             </div>
         <!-- Slide fade -->
         <div class="mySlides">
-            <div class="d-flex flex-column text-center text-light"><p class="fw-bold my-2">Rain Coming</p><p class="opacity-75 m-0">Rain possible this morning</p></div>
+            <div class="d-flex flex-column text-center text-light my"><p class="fw-bold my-2">Tommorow's Temperature</p><p class="opacity-75 m-0">Almost the same as today</p></div>
             </div>
         <!-- Slide fade -->
         
-            
+
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
+        
 
-        <div style="text-align:center">
+        <div style="text-align:center; margin-top: 1.5em;">
             <span class="dot" onclick="currentSlide(1)"></span> 
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span> 
           </div>
         
     </div>
-   
-</div>
-<!-- Container Div -->
-    
+<!-- Container Div Alerts-->
+
+     <div class="container d-flex flex-column my-3 rounded-4 fs-5 p-3"style="background-color: rgba(161, 190, 233, 0.39);">
+        <div class="row row cols 6 text-light my-2 fw-medium opacity-75">
+            <div class="col-2">Yesterday</div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2">10°</div>
+            <div class="col-2">0°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Today</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
+            <div class="col-2"><img class="img" src="assets/moon.png"></div>
+            <div class="col-2">11°</div>
+            <div class="col-2">1°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Thursday</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/cloudy.png"></div>
+            <div class="col-2"><img class="img" src="assets/crescent-moon.png"></div>
+            <div class="col-2">12°</div>
+            <div class="col-2">3°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Friday</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/heavy-rain.png"></div>
+            <div class="col-2"><img class="img" src="assets/moon.png"></div>
+            <div class="col-2">9°</div>
+            <div class="col-2">-1°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Saturday</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
+            <div class="col-2"><img class="img" src="assets/moon.png"></div>
+            <div class="col-2">4°</div>
+            <div class="col-2">-5°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Sunday</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
+            <div class="col-2"><img class="img" src="assets/moon.png"></div>
+            <div class="col-2">7°</div>
+            <div class="col-2">2°</div>
+        </div>
+        <div class="row row cols 6 text-light my-2 fw-medium">
+            <div class="col-2">Monday</div>
+            <div class="col-2"></div>
+            <div class="col-2"><img class="img" src="assets/sun.png"></div>
+            <div class="col-2"><img class="img" src="assets/crescent-moon.png"></div>
+            <div class="col-2">14°</div>
+            <div class="col-2">5°</div>
+        </div>
+        
+
+     </div>
     <script src="fetch.js"></script>
     <script src= "javascript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
