@@ -75,17 +75,18 @@
   }</style>
 </head>
 <body>
-    <div class="container-fluid rounded-3" style="width: 500px; height: 920px; overflow: auto; background-color: hsl(241, 87%, 63%);">
+    <div id="theme" class="container-fluid rounded-3" style="width: 500px; height: 920px; overflow: auto; background-color: hsl(241, 87%, 63%);">
         <br>
     <i class="fa-solid fa-bars" style="font-size: xx-large; color: #ffffff;"></i>
-    <div class="container d-flex flex-column  text-light text-center my-5"> <h2>10 °C</h2>
-    <h4>Timisoara</h4></div>
+    <div class="container d-flex flex-column  text-light text-center my-5"> 
+        <h2 class="temp"></h2>
+    <h4 class="city"></h4></div>
     <div class="container d-flex justify-content-center my-5">
    
-        <input class="input" placeholder="Enter City" style="color: #ffffff;
+        <input id="city" class="input" placeholder="Enter City" style="color: #ffffff;
         border: #ffffff 2px solid; border-radius: 6px; text-align: center;"> 
 
-        <button class="btn btn-outline-primary" type="submit" style="color: #ffffff; border: #ffffff 2px solid; margin-left: 1em; font-weight: 600;">Search</button>
+        <button id="submit" class="btn btn-outline-primary" type="submit" style="color: #ffffff; border: #ffffff 2px solid; margin-left: 1em; font-weight: 600;">Search</button>
    
     </div>
     <div class="container justify-content-center rounded-4 fw-bold p-3"style="background-color: rgba(161, 190, 233, 0.39);">
@@ -94,7 +95,8 @@
             <p>8 AM</p>
             <i class="fa-solid fa-cloud-sun"></i>
             <p>8 °C</p>
-            <P><i class="fa-solid fa-droplet" style="color:  #ffffff;"> 9%</i></P>
+            <div style="display: flex; font-size: 16px;"><i class="fa-solid fa-droplet" style="font-size: 16px; color:  #ffffff;">&nbsp;</i><p class="humidity" style="color: #ffffff; font-weight: 800;"> </p>
+                </div>
         </div>
         <div class="col-2">
             <p>8 AM</p>
@@ -172,48 +174,48 @@
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
             <div class="col-2"><img class="img" src="assets/moon.png"></div>
-            <div class="col-2">11°</div>
-            <div class="col-2">1°</div>
+            <div class="col-2"><p class="max_temp"></p></div>
+            <div class="col-2"><p class="min_temp"></p></div>
         </div>
         <div class="row row cols 6 text-light my-2 fw-medium">
             <div class="col-2">Thursday</div>
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/cloudy.png"></div>
             <div class="col-2"><img class="img" src="assets/crescent-moon.png"></div>
-            <div class="col-2">12°</div>
-            <div class="col-2">3°</div>
+            <div class="col-2"><p class="max_temp1"></p></div>
+            <div class="col-2"><p class="min_temp1"></p></div>
         </div>
         <div class="row row cols 6 text-light my-2 fw-medium">
             <div class="col-2">Friday</div>
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/heavy-rain.png"></div>
             <div class="col-2"><img class="img" src="assets/moon.png"></div>
-            <div class="col-2">9°</div>
-            <div class="col-2">-1°</div>
+            <div class="col-2"><p class="max_temp2"></p></div>
+            <div class="col-2"><p class="min_temp2"></p></div>
         </div>
         <div class="row row cols 6 text-light my-2 fw-medium">
             <div class="col-2">Saturday</div>
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
             <div class="col-2"><img class="img" src="assets/moon.png"></div>
-            <div class="col-2">4°</div>
-            <div class="col-2">-5°</div>
+            <div class="col-2"><p class="max_temp3"></p></div>
+            <div class="col-2"><p class="min_temp3"></p></div>
         </div>
         <div class="row row cols 6 text-light my-2 fw-medium">
             <div class="col-2">Sunday</div>
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/cloudy-day.png"></div>
             <div class="col-2"><img class="img" src="assets/moon.png"></div>
-            <div class="col-2">7°</div>
-            <div class="col-2">2°</div>
+            <div class="col-2"><p class="max_temp4"></p></div>
+            <div class="col-2"><p class="min_temp4"></p></div>
         </div>
         <div class="row row cols 6 text-light my-2 fw-medium">
             <div class="col-2">Monday</div>
             <div class="col-2"></div>
             <div class="col-2"><img class="img" src="assets/sun.png"></div>
             <div class="col-2"><img class="img" src="assets/crescent-moon.png"></div>
-            <div class="col-2">14°</div>
-            <div class="col-2">5°</div>
+            <div class="col-2"><p class="max_temp5"></p></div>
+            <div class="col-2"><p class="min_temp5"></p></div>
         </div>
     </div>
 

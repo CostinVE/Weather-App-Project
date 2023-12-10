@@ -26,3 +26,35 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+// const rain = true
+
+// function theme(rain){
+//     if (rain = true){
+//       document.getElementById('theme').innerHTML.style.backgroundColor = "red"
+    
+// }
+//  else{
+//   x.style.backgroundColor = "red"
+//  }
+// }
+
+// theme(rain)
+
+const rain = false;
+
+function changeBackgroundColor(rain) {
+  var themeDiv = document.getElementById('theme');
+
+  if (rain) {
+    // Set background color to gray if rain is true
+    themeDiv.style.backgroundColor = 'gray';
+  } else {
+    // Set the original background color (hsl(241, 87%, 63%)) if rain is false
+    themeDiv.style.backgroundColor = 'hsl(241, 87%, 63%)';
+  }
+}
+
+// Example usage
+// Set rain to true or false based on your logic
+changeBackgroundColor(rain);
