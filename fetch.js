@@ -55,7 +55,7 @@
 
 
 const API_KEY = "61271d54ff6709e648e493f1e3e4781f"  // should be private
-const API_SRC = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Paris"
+const API_SRC = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Craiova"
 
 
 
@@ -83,16 +83,16 @@ async function checkWeather(){
   document.querySelector(".min_temp2").innerHTML = Math.round(data.list[13].main.temp_min) + "°"
 
   // +3 days
-  document.querySelector(".max_temp3").innerHTML = Math.round(data.list[13].main.temp_max) + "°"
-  document.querySelector(".min_temp3").innerHTML = Math.round(data.list[13].main.temp_min) + "°"
+  document.querySelector(".max_temp3").innerHTML = Math.round(data.list[22].main.temp_max) + "°"
+  document.querySelector(".min_temp3").innerHTML = Math.round(data.list[22].main.temp_min) + "°"
 
   // +4 days
-  document.querySelector(".max_temp4").innerHTML = Math.round(data.list[13].main.temp_max) + "°"
-  document.querySelector(".min_temp4").innerHTML = Math.round(data.list[13].main.temp_min) + "°"
+  document.querySelector(".max_temp4").innerHTML = Math.round(data.list[30].main.temp_max) + "°"
+  document.querySelector(".min_temp4").innerHTML = Math.round(data.list[30].main.temp_min) + "°"
 
   // +5 days
-  document.querySelector(".max_temp5").innerHTML = Math.round(data.list[13].main.temp_max) + "°"
-  document.querySelector(".min_temp5").innerHTML = Math.round(data.list[13].main.temp_min) + "°"
+  document.querySelector(".max_temp5").innerHTML = Math.round(data.list[38].main.temp_max) + "°"
+  document.querySelector(".min_temp5").innerHTML = Math.round(data.list[38].main.temp_min) + "°"
 
 }
 checkWeather()
