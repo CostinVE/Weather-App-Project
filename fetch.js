@@ -55,19 +55,29 @@
 
 
 const API_KEY = "61271d54ff6709e648e493f1e3e4781f"  // should be private
-const API_SRC = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Craiova"
+const API_SRC = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q="
+
+const searchbox =  document.querySelector(".search input")
+const searchBTN=  document.querySelector(".search button")
 
 
 
-async function checkWeather(){
-  const response = await fetch(API_SRC + `&appid=${API_KEY}`)
+async function checkWeather(city){
+  const response = await fetch(API_SRC + city + `&appid=${API_KEY}`)
   var data = await response.json()
 
   console.log(data)
 
   document.querySelector(".city").innerHTML = data.city.name
   document.querySelector('.temp').innerHTML = Math.round(data.list[0].main.temp) + "°C"
-  document.querySelector(".humidity").innerHTML = data.list[0].main.humidity + " %"
+  document.querySelector('.wind').innerHTML = "Wind: " + data.list[0].wind.speed + " km/h"
+
+  document.querySelector('.humidity').innerHTML = "Humidity: " + data.list[0].main.humidity + "%"
+  document.querySelector('.sunset').innerHTML = "Sunset: " + String(data.city.sunset).substring(0, 2) + ":" + String(data.city.sunset).substring(2, 4)
+
+  
+
+ 
 
   // Today
   document.querySelector(".max_temp").innerHTML = Math.round(data.list[0].main.temp_max) + "°"
@@ -95,5 +105,10 @@ async function checkWeather(){
   document.querySelector(".min_temp5").innerHTML = Math.round(data.list[38].main.temp_min) + "°"
 
 }
-checkWeather()
+
+searchBTN.addEventListener("click", () => {
+  checkWeather(searchbox.value);
+})
+
+
 

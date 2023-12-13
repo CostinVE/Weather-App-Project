@@ -82,22 +82,22 @@
         <h2 class="temp"></h2>
     <h4 class="city"></h4></div>
     <div class="container d-flex justify-content-center my-5">
-   
-        <input id="city" class="input" placeholder="Enter City" style="color: #ffffff;
+       <div class="search">
+        <input class="input" type="text" placeholder="Enter City" style="color: #ffffff;
         border: #ffffff 2px solid; border-radius: 6px; text-align: center;"> 
 
-        <button id="submit" class="btn btn-outline-primary" type="submit" style="color: #ffffff; border: #ffffff 2px solid; margin-left: 1em; font-weight: 600;">Search</button>
+        <button class="btn btn-outline-primary" type="submit" style="color: #ffffff; border: #ffffff 2px solid; margin-left: 1em; font-weight: 600;">Search</button>
+        </div>
    
     </div>
     <div class="container justify-content-center rounded-4 fw-bold p-3"style="background-color: rgba(161, 190, 233, 0.39);">
         <div class="row row-cols-6">
         <div class="col-2">
-            <p>8 AM</p>
-            <i class="fa-solid fa-cloud-sun"></i>
-            <p>8 °C</p>
-            <div style="display: flex; font-size: 16px;"><i class="fa-solid fa-droplet" style="font-size: 16px; color:  #ffffff;">&nbsp;</i><p class="humidity" style="color: #ffffff; font-weight: 800;"> </p>
-                </div>
-        </div>
+                <p>8 AM</p>
+                <i class="fa-solid fa-cloud-bolt" style="font-size: larger;"></i>
+                <p>2 °C</p>
+                <P><i class="fa-solid fa-droplet" style="color:  #ffffff;"> 96%</i></P>
+            </div>
         <div class="col-2">
             <p>8 AM</p>
             <i class="fa-solid fa-cloud-bolt" style="font-size: larger;"></i>
@@ -223,21 +223,21 @@
         <div class="row row-cols-3 g-3 my-3 rounded-4 ">
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/sunny.png" alt="UV Index">
-                <p >UV Index</p> 
+                <p class="sunset" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
                
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/humidity.png" alt="Humidity">
-                <p>Humidity</p>
+                <p class="humidity"style="color: #ffffff; font-weight: 600; margin-bottom: 1em;">Humidity</p>
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/wind.png" alt="Wind">
-                <p>Wind</p>
+                <p class="wind" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
 
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/sunset-.png" alt="Sunset">
-                <p>Sunset</p>
+                <p class="sunset" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
             </div>
         </div>
     </div>
