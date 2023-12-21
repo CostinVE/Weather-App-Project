@@ -61,10 +61,31 @@ const searchbox =  document.querySelector(".search input")
 const searchBTN=  document.querySelector(".search button")
 
 
-
 async function checkWeather(city){
   const response = await fetch(API_SRC + city + `&appid=${API_KEY}`)
   var data = await response.json()
+
+  const sunriseTimestamp
+   = data.city.sunrise
+  const timezone =  data.city.timezone
+
+  const sunriseData = new Date(sunriseTimestamp * 1000 + timezone * 1000);
+
+  let hours = sunriseData.getHours();
+  let minutes = sunriseData.getMinutes();
+  const formattedSunrise = `${hours}:${minutes}`
+
+  const sunsetTimestamp = data.city.sunset
+
+
+  const sunsetData = new Date(sunsetTimestamp * 1000 + timezone * 1000);
+
+  let hours2 = sunsetData.getHours();
+  let minutes2 = sunsetData.getMinutes();
+  const formattedSunset = `${hours2}:${minutes2}`
+
+
+
 
   console.log(data)
 
@@ -73,10 +94,13 @@ async function checkWeather(city){
   document.querySelector('.wind').innerHTML = "Wind: " + data.list[0].wind.speed + " km/h"
 
   document.querySelector('.humidity').innerHTML = "Humidity: " + data.list[0].main.humidity + "%"
-  document.querySelector('.sunset').innerHTML = "Sunset: " + String(data.city.sunset).substring(0, 2) + ":" + String(data.city.sunset).substring(2, 4)
+  document.querySelector('.sunset').innerHTML = "Sunrise: " + formattedSunrise
+  document.querySelector('.sunset1').innerHTML = "Sunset: " + formattedSunset
 
   
-
+  
+  document.querySelector('.currentHour').innerHTML = String(data.list[0].dt_text).substring(11, 13)
+  
  
 
   // Today
@@ -104,6 +128,86 @@ async function checkWeather(city){
   document.querySelector(".max_temp5").innerHTML = Math.round(data.list[38].main.temp_max) + "°"
   document.querySelector(".min_temp5").innerHTML = Math.round(data.list[38].main.temp_min) + "°"
 
+  const weatherNOW = data.list[0].weather[0].main
+  // const dtTime= data.list[0].dt_txt
+  // const currentHour = dtTime.slice(11, 13)
+
+  // console.log(currentHour)
+
+  var image = document.createElement("img")
+  image.src = 'assets/cloudy.png'
+  image.setAttribute("height", "120")
+  image.setAttribute("width", "120")
+  image.setAttribute("alt","weather...")
+
+  var image2 = document.createElement("img")
+  image2.src = 'assets/rain.png'
+  image2.setAttribute("height", "120")
+  image2.setAttribute("width", "120")
+  image2.setAttribute("alt","weather...")
+  
+  var sunny = document.createElement("img")
+  sunny.src = 'assets/sunny.png'
+  sunny.setAttribute("height", "120")
+  sunny.setAttribute("width", "120")
+  sunny.setAttribute("alt","weather...")
+
+  // var night = document.createElement("img")
+  // night.src = 'assets/crescent-moon.png'
+  // night.setAttribute("height", "120")
+  // night.setAttribute("width", "120")
+  // night.setAttribute("alt","weather...")
+
+
+  function changeBackgroundColor(weatherNOW) {
+    var themeDiv = document.getElementById('theme');
+    let rain = false
+    let cloudy = false
+
+    // if(currentHour > 18 & rain === false){
+    //   themeDiv.style.backgroundColor = '#1d0c75';
+    //   var header = document.querySelector('.header')
+    //   header.innerHTML= ''
+    //   header.appendChild(night)
+
+    // }
+
+     if(rain === false && cloudy === false && weatherNOW === "Clear")
+       {
+        themeDiv.style.backgroundColor = '#4f83f3';
+         var header = document.querySelector('.header')
+         header.innerHTML = ''
+         header.appendChild(sunny)
+       }
+  
+     else if (weatherNOW === "Rain") {
+         console.log("rain is here")
+         rain = true
+         themeDiv.style.backgroundColor = '#777487';
+         var header = document.querySelector('.header')
+         header.innerHTML = ''
+         header.appendChild(image2)
+    }
+    
+    else if(rain === false && weatherNOW === "Clouds"){
+       cloudy = true
+       console.log("it's cloudy")
+       themeDiv.style.backgroundColor = '#4f83f3';
+       var header = document.querySelector('.header')
+       header.innerHTML = ''
+       header.appendChild(image)
+       
+    }
+
+     else{
+
+     }
+       
+
+  console.log(data.list[0].weather[0].main)
+}
+
+changeBackgroundColor(weatherNOW)
 }
 
 searchBTN.addEventListener("click", () => {

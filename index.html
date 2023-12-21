@@ -72,15 +72,22 @@
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
-  }</style>
+  }
+  
+  
+  </style>
 </head>
 <body>
-    <div id="theme" class="container-fluid rounded-3" style="width: 500px; height: 920px; overflow: auto; background-color: hsl(241, 87%, 63%);">
+    <div id="theme" class="container-fluid rounded-3" style="width: 500px; height: 920px; overflow: auto; background-color:#4f83f3;">
         <br>
     <i class="fa-solid fa-bars" style="font-size: xx-large; color: #ffffff;"></i>
-    <div class="container d-flex flex-column  text-light text-center my-5"> 
+    
+    <div class="container flex text-light text-center my-5"> 
+        <div style="display: flex; flex-direction: column;">
         <h2 class="temp"></h2>
-    <h4 class="city"></h4></div>
+    <h4 class="city"></h4>
+    <div class="header" style="justify-content: flex-end; margin-top: 1em;"></div></div>
+    
     <div class="container d-flex justify-content-center my-5">
        <div class="search">
         <input class="input" type="text" placeholder="Enter City" style="color: #ffffff;
@@ -88,15 +95,17 @@
 
         <button class="btn btn-outline-primary" type="submit" style="color: #ffffff; border: #ffffff 2px solid; margin-left: 1em; font-weight: 600;">Search</button>
         </div>
-   
     </div>
+</div>
+    <!-- City Search -->
+   
     <div class="container justify-content-center rounded-4 fw-bold p-3"style="background-color: rgba(161, 190, 233, 0.39);">
         <div class="row row-cols-6">
         <div class="col-2">
-                <p>8 AM</p>
+                <p class="currentHour"></p>
                 <i class="fa-solid fa-cloud-bolt" style="font-size: larger;"></i>
-                <p>2 °C</p>
-                <P><i class="fa-solid fa-droplet" style="color:  #ffffff;"> 96%</i></P>
+                <p class="currentTemp">2 °C</p>
+                <P class="currentHumid"><i class="fa-solid fa-droplet" style="color:  #ffffff;"></i></P>
             </div>
         <div class="col-2">
             <p>8 AM</p>
@@ -228,7 +237,7 @@
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/humidity.png" alt="Humidity">
-                <p class="humidity"style="color: #ffffff; font-weight: 600; margin-bottom: 1em;">Humidity</p>
+                <p class="humidity"style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/wind.png" alt="Wind">
@@ -237,7 +246,7 @@
             </div>
             <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/sunset-.png" alt="Sunset">
-                <p class="sunset" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
+                <p class="sunset1" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
             </div>
         </div>
     </div>
