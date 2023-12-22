@@ -59,5 +59,3 @@ function showSlides(n) {
 // Example usage
 // Set rain to true or false based on your logic
 
-
-
