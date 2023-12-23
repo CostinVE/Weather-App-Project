@@ -48,7 +48,7 @@
 
 const API_KEY = "61271d54ff6709e648e493f1e3e4781f"; // should be private
 const API_SRC =
-  "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
+  "https://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
 
 const searchbox = document.querySelector(".search input");
 const searchBTN = document.querySelector(".search button");
@@ -306,7 +306,7 @@ document.querySelector('.currentHour5').innerHTML = jsonData.data[5][0].slice(11
       var header = document.querySelector(".header");
       header.innerHTML = "";
       header.appendChild(snow);
-      
+
     }
     else {
     }
