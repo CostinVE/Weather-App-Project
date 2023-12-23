@@ -51,8 +51,8 @@
 
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 8px;
+    width: 8px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
@@ -142,9 +142,11 @@
     </div>
     <!-- Forecast -->
     <div class="container rounded-4 my-4" style="background-color: rgba(161, 190, 233, 0.39);">
+        <div class="RainAlert">
         <div class="mySlides">
         <div class="d-flex flex-column text-center text-light"><p class="fw-bold my-2">Rain Coming</p><p class="opacity-75 m-0">Rain possible this morning</p></div>
         </div>
+    </div>
         <!-- Slide fade -->
         <div class="mySlides">
             <div class="d-flex flex-column text-center text-light"><p class="fw-bold my-2">It may be slippery!</p><p class="opacity-75 m-0">Snow likely to continue until 7PM</p></div>
@@ -224,23 +226,23 @@
     </div>
  </div>
 
-    <div class="container text-center">
-        <div class="row row-cols-3 g-3 my-3 rounded-4 ">
-            <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
+    <div class="container-fluid text-center">
+        <div class="d-flex flex-column my-3 rounded-4 ">
+            <div class="col-6 rounded-4 my-2 p-2 w-100"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/sunny.png" alt="UV Index">
                 <p class="sunset" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
                
             </div>
-            <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
+            <div class="col-6 rounded-4 my-2 p-2 w-100"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/humidity.png" alt="Humidity">
                 <p class="humidity"style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
             </div>
-            <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
+            <div class="col-6 rounded-4 my-2 p-2 w-100"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/wind.png" alt="Wind">
                 <p class="wind" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
 
             </div>
-            <div class="col-6 rounded-4 p-2 w-50"style="background-color: rgba(161, 190, 233, 0.39);">
+            <div class="col-6 rounded-4 my-2 p-2 w-100"style="background-color: rgba(161, 190, 233, 0.39);">
                 <img class="div-img" src="assets/sunset-.png" alt="Sunset">
                 <p class="sunset1" style="color: #ffffff; font-weight: 600; margin-bottom: 1em;"></p>
             </div>

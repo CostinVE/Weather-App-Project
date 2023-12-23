@@ -131,6 +131,8 @@ async function checkWeather(city) {
  document.querySelector('.currentTemp5').innerHTML = Math.floor(data.list[5].main.feels_like) + "°C"
 
 //  Hour-forecast
+
+
 const jsonData = {
   data: [
       [data.list[0].dt_txt],
@@ -143,7 +145,7 @@ const jsonData = {
   ]
 };
 
-console.log(jsonData)
+
 document.querySelector('.currentHour').innerHTML = jsonData.data[0][0].slice(11,16)
 
 document.querySelector('.currentHour1').innerHTML = jsonData.data[1][0].slice(11,16)
@@ -215,6 +217,21 @@ document.querySelector('.currentHour5').innerHTML = jsonData.data[5][0].slice(11
     Math.round(data.list[38].main.temp_min) + "°";
 
   const weatherNOW = data.list[0].weather[0].main;
+
+  function hideSlides() {
+    var weatherMain = data.list[0].weather[0].main;
+  
+    if (weatherMain !== 'Rain') {
+      var elementsToHide = document.getElementsByClassName("RainAlert");
+  
+      for (var i = 0; i < elementsToHide.length; i++) {
+        elementsToHide[i].style.display = "none";
+      }
+    }
+  }
+  
+  hideSlides();
+  
   // const dtTime= data.list[0].dt_txt
   // const currentHour = dtTime.slice(11, 13)
 
@@ -238,6 +255,13 @@ document.querySelector('.currentHour5').innerHTML = jsonData.data[5][0].slice(11
   sunny.setAttribute("width", "120");
   sunny.setAttribute("alt", "weather...");
 
+  var snow = document.createElement("img");
+  snow.src = "assets/snow.png";
+  snow.setAttribute("height", "120");
+  snow.setAttribute("width", "120");
+  snow.setAttribute("alt", "weather...");
+
+
   // var night = document.createElement("img")
   // night.src = 'assets/crescent-moon.png'
   // night.setAttribute("height", "120")
@@ -257,7 +281,7 @@ document.querySelector('.currentHour5').innerHTML = jsonData.data[5][0].slice(11
 
     // }
 
-    if (rain === false && cloudy === false && weatherNOW === "Clear") {
+    if (weatherNOW === "Clear") {
       themeDiv.style.backgroundColor = "#4f83f3";
       var header = document.querySelector(".header");
       header.innerHTML = "";
@@ -269,14 +293,22 @@ document.querySelector('.currentHour5').innerHTML = jsonData.data[5][0].slice(11
       var header = document.querySelector(".header");
       header.innerHTML = "";
       header.appendChild(image2);
-    } else if (rain === false && weatherNOW === "Clouds") {
+    } else if (weatherNOW === "Clouds") {
       cloudy = true;
       console.log("it's cloudy");
       themeDiv.style.backgroundColor = "#4f83f3";
       var header = document.querySelector(".header");
       header.innerHTML = "";
       header.appendChild(image);
-    } else {
+    }  else if (weatherNOW === "Snow") {
+      console.log("Snowing");
+      themeDiv.style.backgroundColor = "#bac9d9";
+      var header = document.querySelector(".header");
+      header.innerHTML = "";
+      header.appendChild(snow);
+      
+    }
+    else {
     }
 
     console.log(data.list[0].weather[0].main);
